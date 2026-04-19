@@ -53,11 +53,12 @@ exports.viewTask = async(req, res)=>{
 exports.updateTask = async(req, res)=>{
     try {
         const {id} = req.params
-        const {task, description} = req.body
+        const {task, description, isCompleted} = req.body
 
         const newUpdate = {
             task,
-            description
+            description,
+            isCompleted
         }
 
         const updateOldTask = await taskModel.findByIdAndUpdate(id, newUpdate, {new: true})
