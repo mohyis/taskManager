@@ -75,7 +75,7 @@ exports.promoteUsers = async(req, res)=>{
         const update = await User.findByIdAndUpdate(id, newUpdate, {new: true})
         if(!update){
             return res.status(404).json({
-                message: 'task not found'
+                message: 'user not found'
             })
         }
 
